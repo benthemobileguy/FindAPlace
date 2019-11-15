@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context=".NoticeActivity">
+    <ImageButton
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:tint="#707070"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_home_black_24dp"
+        android:contentDescription="@string/home_button" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/body"
+        android:textStyle="bold"
+        android:fontFamily="@font/muli_bold"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:text="@string/notice"/>
+<TextView
+    android:id="@+id/body"
+    android:fontFamily="@font/muli"
+    android:text="Your registration has been successfully submitted and presently awaits approval by the Admin. However, you can always review your approval status on your dashboard."
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:padding="16dp"
+    android:textSize="16sp"
+    android:textStyle="bold" />
+    <Button
+        android:fontFamily="@font/muli_bold"
+        android:id="@+id/dashboard_button"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textColor="@drawable/text_selector"
+        android:padding="16dp"
+        android:background="@drawable/button_selector"
+        android:text="Go to Dashboard" />
+</RelativeLayout>

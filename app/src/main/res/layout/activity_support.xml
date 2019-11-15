@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fap.bnotion.findaplace.SupportActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:tint="@android:color/white"
+            android:contentDescription="@string/home_button" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="@string/support"/>
+        <ImageView
+            android:id="@+id/mail"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_contact_mail_black_24dp"
+            android:tint="@android:color/white"
+            android:contentDescription="@string/contact" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/custom_white"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+           android:fontFamily="@font/roboto_slab_bold"
+            android:text="@string/follow_us_on"
+            android:textColor="@color/light_black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/view_background" />
+
+        <ImageView
+            android:id="@+id/facebook_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/facebook_image"
+            android:src="@drawable/facebook" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/view_background" />
+
+        <ImageView
+            android:id="@+id/twitter_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/twitter_image"
+            android:src="@drawable/twitter" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/view_background" />
+
+        <ImageView
+            android:id="@+id/instagram_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/twitter_image"
+            android:src="@drawable/instagram" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/view_background" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+           android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="40dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/email_btn"
+                android:background="@drawable/white_round_corner_button"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="45dp">
+                <TextView
+                    android:id="@+id/email_text"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/muli_bold"
+                    android:textColor="@drawable/text_selector6"
+                    android:text="Contact via Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@drawable/email"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/email_text"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/email_text" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/whatsapp_btn"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_round_corner_button"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="45dp">
+                <TextView
+                    android:id="@+id/whatsapp_text"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/muli_bold"
+                    android:textColor="@drawable/text_selector6"
+                    android:text="Contact via WhatsApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@drawable/whatsapp"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/whatsapp_text"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/whatsapp_text" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/call_btn"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_round_corner_button"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="45dp">
+                <TextView
+                    android:id="@+id/phone_text"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/muli_bold"
+                    android:textColor="@drawable/text_selector6"
+                    android:text="Contact via Call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:src="@drawable/phone"
+                    android:tint="@android:color/black"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/phone_text"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/phone_text" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp"
+    android:layout_marginBottom="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_margin="16dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/circle_image"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:ellipsize="end"
+        android:lines="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/user_image"
+        android:layout_toRightOf="@+id/user_image"
+        android:fontFamily="@font/muli_bold"
+        android:text="Ben Bright"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/user_image" />
+<ProgressBar
+    android:id="@+id/progressBar"
+    android:indeterminate="true"
+    style="?android:attr/progressBarStyleLargeInverse"
+    android:indeterminateDrawable="@drawable/custom_progressbar2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"/>
+    <TextView
+        android:id="@+id/time_posted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:layout_below="@+id/user_name"
+        android:layout_alignBottom="@+id/user_image"
+        android:layout_toRightOf="@+id/user_image"
+        android:fontFamily="@font/muli"
+        android:text="2 Dec 2018"
+        android:textSize="14sp"
+        android:layout_toEndOf="@+id/user_image" />
+       <ImageView
+           android:layout_below="@+id/time_posted"
+           android:layout_marginTop="15dp"
+           android:src="@drawable/house_sample"
+           android:id="@+id/posted_house"
+           android:scaleType="centerCrop"
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+           android:contentDescription="@string/house" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textStyle="bold"
+        android:gravity="bottom"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/posted_house"
+        android:fontFamily="@font/roboto_slab_bold"
+        android:lines="2"
+        android:ellipsize="end"
+        android:text="3 Bedroom Flat/Apartment for Rent Oniru Estate Victoria Island Lagos"
+        android:textSize="16sp" />
+    <ImageView
+        android:id="@+id/location_image"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/title"
+        android:src="@drawable/location"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textStyle="bold"
+        android:fontFamily="@font/muli_bold"
+        android:textSize="14sp"
+        android:textColor="@color/textDark"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="23dp"
+        android:layout_toRightOf="@+id/location_image"
+        android:text="Victoria Island, Lagos"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/location_image" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/roboto_slab_bold"
+        android:layout_marginBottom="10dp"
+        android:text="₦450,000"
+        android:textColor="@color/textDark"
+        android:textSize="18.5sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_toStartOf="@+id/views_no"
+        android:layout_toLeftOf="@+id/views_no"
+        android:src="@drawable/view"
+        android:tint="@android:color/holo_orange_dark" />
+    <TextView
+        android:id="@+id/views_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/roboto_slab_bold"
+        android:layout_alignParentRight="true"
+        android:text="0 Views"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/textDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true" />
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/location_text"
+        android:lines="3"
+        android:fontFamily="@font/muli"
+        android:ellipsize="end"
+        android:layout_marginLeft="5dp"
+        android:text="Exquitely finished three bedroom flat with a room BQ. The building is the wholesome expression of lifestyle living with the added advantage. Features: swimming pool, gym, all rooms ensuite, air condition, ample parking space etc."
+        android:textStyle="normal"
+        android:layout_marginStart="5dp" />
+</RelativeLayout>
+    </androidx.cardview.widget.CardView>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context="com.fap.bnotion.findaplace.RegisterActivity">
+    <include layout="@layout/app_bar_layout_invisible"
+        android:id="@+id/register_toolbar"/>
+    <ScrollView
+        android:layout_below="@+id/register_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_full"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="60dp"
+        android:contentDescription="@string/app_name"
+        android:id="@+id/logo" />
+    <EditText
+        android:id="@+id/reg_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/reg_email"
+        android:fontFamily="@font/muli"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:padding="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:hint="@string/username"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/reg_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:fontFamily="@font/muli"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:hint="@string/your_email"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/reg_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_email"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:fontFamily="@font/muli"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:hint="@string/phone_number"
+        android:ems="10"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:fontFamily="@font/muli"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/password"
+        android:textSize="16sp"
+        android:layout_below="@+id/reg_number"
+        android:ems="10"
+        android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:fontFamily="@font/muli"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/confirm_password"
+        android:textSize="16sp"
+        android:layout_below="@+id/reg_password"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/reg_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirm_password"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:fontFamily="@font/muli_bold"
+        android:textSize="16sp"
+        android:textColor="@drawable/text_selector1"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/create_account" />
+
+    <Button
+        android:id="@+id/already_have_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/text_selector1"
+        android:layout_below="@+id/reg_button"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:fontFamily="@font/muli_bold"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/already_have_account"
+        android:textSize="16sp" />
+    </RelativeLayout>
+    </ScrollView>
+    <ProgressBar
+        android:id="@+id/reg_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.CustomColor"
+        android:indeterminate="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

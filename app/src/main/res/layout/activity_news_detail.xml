@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewsDetailActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/background"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:id="@+id/trending_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:fontFamily="@font/roboto"
+            android:text="@string/news"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_margin="16dp"
+                android:id="@+id/linear_layout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/placeholder"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <LinearLayout
+                    android:paddingLeft="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp">
+                    <TextView
+                        android:id="@+id/title"
+                        android:fontFamily="@font/muli_bold"
+                        android:textColor="@color/background"
+                        android:textSize="16sp"
+                        android:text="Follow us on..."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/subtitle"
+                        android:fontFamily="@font/roboto_slab_bold"
+                        android:textColor="@color/customTextColor2"
+                        android:textSize="12sp"
+                        android:text="listenin.com/link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/message_text"
+                android:textColor="@color/background"
+                android:fontFamily="@font/muli_semibold"
+                android:text="Connect with us on our social media handles.Get to know more about us and what we do."
+                android:layout_margin="16dp"
+                android:layout_below="@id/linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/webLinkBtn"
+                android:textColor="@drawable/text_selector2"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/muli_bold"
+                android:textAllCaps="false"
+                android:background="@color/background"
+                android:layout_below="@id/message_text"
+                android:gravity="center"
+                android:text="Web Link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

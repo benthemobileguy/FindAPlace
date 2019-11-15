@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
+
+        <!-- For each individual Spinner list item once clicked on -->
+        <item name="android:spinnerDropDownItemStyle">@style/spinnerDropDownItemStyle</item>
+
+    </style>
+    <style name="AppTheme.CustomColor">
+        <item name="colorPrimary">@color/light_purple</item>
+        <item name="colorPrimaryDark">@color/light_purple</item>
+        <item name="colorAccent">@color/light_purple</item>
+    </style>
+    <style name="myToolbarTheme"  parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/custom_white</item>
+    </style>
+    <style name="SearchView">
+        <item name="floatingSearch_menuItemIconColor">@color/colorPrimary</item>
+    </style>
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <!-- Required for pre-Lollipop. -->
+
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">4.0dip</item>
+    </style>
+
+    <style name="AppTheme.YellowAccent">
+        <item name="colorAccent">@android:color/holo_orange_dark</item>
+    </style>
+    <style name="foo">
+        <item name="floatingSearch_menuItemIconColor">@color/colorPrimary</item>
+    </style>
+    <style name="spinnerItemStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/customLightText</item>
+        <item name="android:fontFamily">@font/muli_semibold</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:padding">4dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/customLightText</item>
+        <item name="android:fontFamily">@font/muli_semibold</item>
+    </style>
+
+    <style name="SpinnerTheme">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/customLightText</item>
+        <item name="android:fontFamily">@font/muli_semibold</item>
+    </style>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".SplashActivity">
+    <ImageView
+        android:id="@+id/back_img"
+        android:scaleType="centerCrop"
+        android:background="@drawable/house"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/logo_image" />
+    <View
+        android:background="@android:color/black"
+        android:alpha="0.8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="170dp"
+        android:layout_height="175dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/logo_image"
+        android:src="@drawable/logo_new" />
+
+    <ImageView
+        android:id="@+id/logo_text"
+        android:layout_width="150dp"
+        android:layout_height="63dp"
+        android:layout_below="@+id/logo_image"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_text" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.Holo.Light.ProgressBar.Small.Inverse"
+        android:layout_below="@id/logo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:indeterminate="true"
+        android:theme="@style/AppTheme.CustomColor"/>
+    <TextView
+        android:id="@+id/bnotionText"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="7dp"
+        android:textSize="12sp"
+       android:fontFamily="@font/muli_semibold"
+        android:text="v2.2"/>
+</RelativeLayout>
+

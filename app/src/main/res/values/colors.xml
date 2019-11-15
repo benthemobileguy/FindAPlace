@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffaa66cc</color>
+    <color name="colorPrimaryDark">#B5B6B6</color>
+    <color name="colorAccent">#ffaa66cc</color>
+    <color name="colorAccent2">#DAA520</color>
+    <color name="app_color">#F5F5F5</color>
+    <color name="brown">#624C38</color>
+    <color name="iconTint">#90A4AE</color>
+    <color name="icon_color">#B5B6B6</color>
+    <color name="textColor">#757575</color>
+    <color name="background">#30383C</color>
+    <color name="customDark">#7B624A</color>
+    <color name="darkBrown">#8B4513</color>
+    <color name="color_pressed">#C7C7C7</color>
+    <color name="custom_white">#F4F2F2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorBarBackground">#ffaa66cc</color>
+    <color name="border_color">#B3B3B3</color>
+    <color name="light_black">#7D7D7D</color>
+    <color name="view_background">#CBCBCB</color>
+    <color name="textColorDark">#4A4A4A</color>
+    <color name="textDark">#808080</color>
+    <color name="customTextColor">#353434</color>
+    <color name="customTextColor2">#383639</color>
+    <color name="customTextColor3">#656565</color>
+    <color name="textColorNav3">#E7E7E7</color>
+    <color name="black">#000000</color>
+    <color name="light_purple">#b19cd9</color>
+    <color name="dark_purple">#301934</color>
+    <color name="textColorGrey">#99989B</color>
+    <color name="customLightText">#333333</color>
+    <color name="orangeDark">#ffff8800</color>
+    <color name="lime">#3EFF00</color>
+</resources>

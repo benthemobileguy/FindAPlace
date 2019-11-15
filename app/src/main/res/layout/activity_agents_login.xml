@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/relativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/app_color"
+    tools:context=".PhoneVerificationActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorBarBackground"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+        <ImageView
+            android:id="@+id/agent_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/estate_agent"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/phone_number_verification" />
+
+        <TextView
+            android:id="@+id/basic_info_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:text="@string/registered_estate_agent"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:fontFamily="@font/muli_bold" />
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:id="@+id/toolbar_two"
+        android:layout_marginBottom="1dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorBarBackground"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/basic_info_text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:fontFamily="@font/muli_bold"
+            android:text="@string/log_in_to_access_dashboard"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:fontFamily="@font/roboto" />
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_below="@+id/toolbar_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.CustomColor"
+        android:indeterminate="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+    <EditText
+        android:id="@+id/phone_number"
+        android:inputType="number"
+        android:padding="16dp"
+        android:fontFamily="@font/muli"
+        android:layout_below="@+id/progressBar"
+        android:drawableLeft="@drawable/ic_call_black_24dp"
+        android:maxLength="11"
+        android:layout_margin="4dp"
+        android:drawablePadding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone_number"
+        android:drawableStart="@drawable/ic_call_black_24dp" />
+    <EditText
+        android:id="@+id/verification_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/muli"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:drawablePadding="16dp"
+        android:layout_margin="4dp"
+        android:padding="16dp"
+        android:inputType="number"
+        android:enabled="false"
+        android:layout_below="@id/phone_number"
+        android:hint="@string/verification_code"
+        android:drawableStart="@drawable/ic_lock_black_24dp" />
+    <TextView
+        android:id="@+id/verification_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:fontFamily="@font/muli_bold"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_above="@+id/resend_button"
+        android:text="@string/enter_the_phone_number_you_used_to_register_as_an_estate_agent"
+        />
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:fontFamily="@font/muli_bold"
+        android:textColor="@drawable/text_selector2"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/send_verification" />
+    <Button
+        android:id="@+id/resend_button"
+        android:layout_above="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:alpha="0.5"
+        android:enabled="false"
+        android:fontFamily="@font/muli_bold"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:textColor="@drawable/text_selector2"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="@string/resend_code" />
+</RelativeLayout>

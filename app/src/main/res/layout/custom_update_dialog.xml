@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/close_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:background="@drawable/white_circle_drawable"
+        android:layout_marginRight="7dp"
+        android:tint="@color/colorPrimary"
+        android:src="@drawable/ic_close_black_24dp"
+        android:elevation="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/close_dialog" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/image_bg"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@color/colorPrimary"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:alpha="0.65"
+                android:background="@android:color/black"/>
+            <TextView
+                android:id="@+id/app_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="25dp"
+                android:text="Find A Place"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/muli_bold" />
+            <TextView
+                android:id="@+id/new_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/app_text"
+                android:text="New version is available"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:fontFamily="@font/muli" />
+            <TextView
+                android:id="@+id/new_version_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/new_version"
+                android:text="4.0.0"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:fontFamily="@font/muli_bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@+id/image_bg"
+                android:background="@color/textColorNav3"
+                android:layout_height="50dp"/>
+            <TextView
+                android:id="@+id/new_feature_header"
+                android:layout_below="@+id/image_bg"
+                android:fontFamily="@font/muli_bold"
+                android:textSize="14sp"
+                android:text="New Features:"
+                android:textColor="@color/customTextColor"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp" />
+            <TextView
+                android:id="@+id/new_feature_one"
+                android:layout_below="@+id/new_feature_header"
+                android:fontFamily="@font/muli_semibold"
+                android:textSize="14sp"
+                android:text="New updated categorization promo for sellers"
+                android:textColor="@color/customTextColor"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp" />
+            <TextView
+                android:id="@+id/new_feature_two"
+                android:layout_below="@+id/new_feature_one"
+                android:fontFamily="@font/muli_semibold"
+                android:textSize="14sp"
+                android:text="New design forms"
+                android:textColor="@color/customTextColor"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp" />
+
+            <TextView
+                android:id="@+id/new_feature_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_feature_two"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/muli_semibold"
+                android:text="My subscription page for sellers"
+                android:textColor="@color/customTextColor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/app_removal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_feature_three"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/muli_semibold_italic"
+                android:text="*Older app versions would be dropped on June 1, 2019"
+                android:textColor="@color/customTextColor"
+                android:textSize="14sp" />
+            <Button
+                android:id="@+id/update_btn"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/app_removal_text"
+                android:textSize="14sp"
+                android:fontFamily="@font/muli_bold"
+                android:textColor="@drawable/login_text_selector2"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Update Now"
+                android:background="@drawable/button_selector"/>
+
+            <TextView
+                android:id="@+id/update_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="35dp"
+                android:layout_below="@+id/update_btn"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/muli_semibold_italic"
+                android:text="We recommend that you always use the latest version in order to enjoy all the latest features"
+                android:textColor="@color/customTextColor"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

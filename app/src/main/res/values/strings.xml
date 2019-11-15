@@ -1,0 +1,290 @@
+<resources>
+    <string name="app_name">FindAPlace.com</string>
+    <string name="logo_image">logo_image</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="reset_password">Reset your Password</string>
+    <string name="enter_your_email">Enter your registered email</string>
+    <string name="log_in_as_guest">Log in as Guest</string>
+    <string name="create_new_account">Create a new Account</string>
+    <string name="create_account">Create new Account</string>
+    <string name="login_to_account">Login to Account</string>
+    <string name="new_account">Create New Account</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="log_in">Login</string>
+    <string name="already_have_account">Already have an Account?</string>
+    <string name="your_email">Email</string>
+    <string name="password">Password</string>
+    <string name="image_logo">Image Logo</string>
+    <string name="skip">skip</string>
+    <string name="skip_login">Skip Login</string>
+    <string name="sign_in_with_google">Sign In with Google</string>
+    <string name="filter">Filter</string>
+    <string name="post">Post</string>
+    <string name="home">home</string>
+    <string name="favourites">favourites</string>
+    <string name="profile">profile</string>
+    <string name="messages">messages</string>
+    <string name="trending">Trending</string>
+    <string name="for_sale">For Sale</string>
+    <string name="for_rent">For Rent</string>
+    <string name="news">News</string>
+    <string name="agents">Agents</string>
+    <string name="support">Support</string>
+    <string name="share">Share</string>
+    <string name="shortlet">ShortLet</string>
+    <string name="basic_information">Basic Information</string>
+    <string name="estate_agent_tell_us_about_yourself">Estate Agent? Tell us about yourself</string>
+    <string name="name">Name</string>
+    <string name="email">Email:</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="enter_a_valid_phone_number_to_receive_the_verification_code">*Enter a valid phone number to receive the verification code</string>
+    <string name="continue_reg">Continue</string>
+    <string name="sex">Sex</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="address">Address</string>
+    <string name="icon_info">*Click on the icon to upload your image from gallery</string>
+    <string name="passport_upload_3">*This would always show on your property listings.</string>
+    <string name="passport_upload_2">*It should be clear and can be of any background color.</string>
+    <string name="passport_upload_1">*Please upload a recent passport photograph of yours.</string>
+    <string name="passport_upload">Passport Upload</string>
+    <string name="document_upload">Document Upload</string>
+    <string name="document_upload_text">*You are almost done. Please upload any of the documents listed below to complete your registration process.</string>
+    <string name="national_id_card">National ID Card</string>
+    <string name="drivers_license">Drivers License</string>
+    <string name="international_passport">International Passport</string>
+    <string name="avatar_image">Avatar Image</string>
+    <string name="number_one">Number One</string>
+    <string name="_0">0</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="a_verification_code_will_be_sent_to_your_phone_number">A verification code will be sent to your Phone Number</string>
+    <string name="send_verification">SEND VERIFICATION</string>
+    <string name="phone_number_verification">Phone Number Verification</string>
+    <string name="verify_code">VERIFY CODE</string>
+    <string name="number_3">Number 3</string>
+    <string name="number_two">Number Two</string>
+    <string name="finish">Finish Registration</string>
+    <string name="estate_agents">Estate Agents</string>
+    <string name="dashboard">Your Dashboard</string>
+    <string name="register">Register</string>
+    <string name="status">Status:</string>
+    <string name="surname_name">Surname, Name</string>
+    <string name="home_button">Home Button</string>
+    <string name="contact">Contact</string>
+    <string name="follow_us_on">Follow us on</string>
+    <string name="facebook_image">Facebook Image</string>
+    <string name="twitter_image">Twitter Image</string>
+    <string name="call_line">Call Line</string>
+    <string name="mail">Mail</string>
+    <string name="findaplace_com">findaplace.com.ng</string>
+    <string name="info_findaplace_com">info@findaplace.com.ng</string>
+    <string name="_07087384070">07087384070</string>
+    <string name="_08100599608">08100599608</string>
+    <string name="_08033761447">08033761447</string>
+    <string name="website">Website</string>
+    <string name="notice">Notice</string>
+    <string name="registered_estate_agent">Registered Estate Agent?</string>
+    <string name="log_in_to_access_dashboard">Log In to Access Dashboard</string>
+    <string name="enter_the_phone_number_you_used_to_register_as_an_estate_agent">Enter the phone number you registered with as an estate agent</string>
+    <string name="filter_results">Filter results</string>
+    <string name="apply_filter">Apply Filter</string>
+    <string name="new_post">New Post</string>
+    <string name="title">Title (minimum 10 characters)</string>
+    <string name="categories">Categories</string>
+    <string name="description">Description (mimimum 50 characters)</string>
+    <string name="lease">Lease</string>
+    <string name="location">Location (Complete Address)</string>
+    <string name="price_in_ngn">Exact Amount in Naira</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="number_of_baths">Number of Baths:</string>
+    <string name="number_of_toilets">Number of Toilets:</string>
+    <string name="your_dashboard">Your Dashboard</string>
+    <string name="no_posts_found">No posts detected!</string>
+    <string name="no_recent_activity_detected">No recent activity detected</string>
+    <string name="latest">Latest</string>
+    <string name="latest_posts">Latest posts</string>
+    <string name="house">House</string>
+    <string name="state">State:</string>
+    <string name="date">Date</string>
+    <string name="delete">Delete Post</string>
+    <string name="image">Image</string>
+    <string name="content">Content</string>
+    <string name="category">Category:</string>
+    <string name="no_results">Nothing found</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="edit_details">EDIT DETAILS</string>
+    <string name="phone">Phone</string>
+    <string name="already_registered">Already registered?</string>
+    <string name="sort_by_price">Sort by Price</string>
+    <string name="price_range">Price Range</string>
+    <string name="search_results">Search Results (location)</string>
+    <string name="search">Search</string>
+    <string name="search_by_location">Search by Location</string>
+    <string name="report_abuse">Report Abuse</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="land">Land</string>
+    <string name="event_centres">Event Centres</string>
+    <string name="close_dialog">Close Dialog</string>
+    <string name="service_apartments">Service Apartments</string>
+    <string name="handyman">Handyman</string>
+    <string name="seating_capacity">Seating Capacity</string>
+    <string name="occupation">Occupation</string>
+    <string name="logo">Logo</string>
+    <string name="search_properties">Search Properties</string>
+    <string name="create_ads">Create Ads</string>
+    <string-array name="AllStates">
+        <item>Lagos</item>
+        <item>Abuja</item>
+        <item>Rivers</item>
+        <item>Zamfara</item>
+        <item>Yobe</item>
+        <item>Sokoto</item>
+        <item>Taraba</item>
+        <item>Plateau</item>
+        <item>Osun</item>
+        <item>Ondo</item>
+        <item>Niger</item>
+        <item>Nassarawa</item>
+        <item>Kwara</item>
+        <item>Kebbi</item>
+        <item>Kogi</item>
+        <item>Katsina</item>
+        <item>Kano</item>
+        <item>Kaduna</item>
+        <item>Jigawa</item>
+        <item>Imo</item>
+        <item>Gombe</item>
+        <item>Ekiti</item>
+        <item>Edo</item>
+        <item>Ebonyi</item>
+        <item>Delta</item>
+        <item>Cross River</item>
+        <item>Borno</item>
+        <item>Benue</item>
+        <item>Bayelsa</item>
+        <item>Bauchi</item>
+        <item>Abia</item>
+        <item>Adamawa</item>
+        <item>Akwa Ibom</item>
+        <item>Enugu</item>
+        <item>Anambra</item>
+        <item>Oyo</item>
+        <item>Ogun</item>
+    </string-array>
+    <string-array name="AllStates2">
+        <item>All</item>
+        <item>Lagos</item>
+        <item>Abuja</item>
+        <item>Rivers</item>
+        <item>Zamfara</item>
+        <item>Yobe</item>
+        <item>Sokoto</item>
+        <item>Taraba</item>
+        <item>Plateau</item>
+        <item>Osun</item>
+        <item>Ondo</item>
+        <item>Niger</item>
+        <item>Nassarawa</item>
+        <item>Kwara</item>
+        <item>Kebbi</item>
+        <item>Kogi</item>
+        <item>Katsina</item>
+        <item>Kano</item>
+        <item>Kaduna</item>
+        <item>Jigawa</item>
+        <item>Imo</item>
+        <item>Gombe</item>
+        <item>Ekiti</item>
+        <item>Edo</item>
+        <item>Ebonyi</item>
+        <item>Delta</item>
+        <item>Cross River</item>
+        <item>Borno</item>
+        <item>Benue</item>
+        <item>Bayelsa</item>
+        <item>Bauchi</item>
+        <item>Abia</item>
+        <item>Adamawa</item>
+        <item>Akwa Ibom</item>
+        <item>Enugu</item>
+        <item>Anambra</item>
+        <item>Oyo</item>
+        <item>Ogun</item>
+    </string-array>
+    <string-array name="Category">
+        <item>All</item>
+        <item>For Sale</item>
+        <item>For Rent</item>
+        <item>Handyman</item>
+        <item>Event Centres</item>
+        <item>Service Apartments</item>
+        <item>Lease</item>
+        <item>Land</item>
+    </string-array>
+    <string-array name="Toilets">
+        <item>All</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>3+</item>
+    </string-array>
+    <string-array name="Capacity">
+        <item>All Prices</item>
+        <item>2 – 100</item>
+        <item>100 – 500</item>
+        <item>500 – 1000</item>
+        <item>1,000 – 5,000</item>
+        <item>5,000 – 10,000</item>
+        <item>10,000 – 50,000</item>
+        <item>50,000 – 100,000</item>
+        <item>100,000 – 200,000</item>
+        <item>200,000 – 500,000</item>
+        <item>500,000 – 1 million</item>
+        <item>1 million – 5 million</item>
+        <item>5 million - 10 million</item>
+        <item>10 million and above</item>
+    </string-array>
+    <string-array name="Capacity2">
+        <item>2 – 100</item>
+        <item>100 – 500</item>
+        <item>500 – 1000</item>
+        <item>1,000 – 5,000</item>
+        <item>5,000 – 10,000</item>
+        <item>10,000 – 50,000</item>
+        <item>50,000 – 100,000</item>
+        <item>100,000 – 200,000</item>
+        <item>200,000 – 500,000</item>
+        <item>500,000 – 1 million</item>
+        <item>1 million – 5 million</item>
+        <item>5 million - 10 million</item>
+        <item>10 million and above</item>
+    </string-array>
+    <string-array name="Prices">
+        <item>All Prices</item>
+        <item>10,000 – 50,000</item>
+        <item>50,000 – 100,000</item>
+        <item>100,000 – 200,000</item>
+        <item>200,000 – 500,000</item>
+        <item>500,000 – 1 million</item>
+        <item>1 million – 5 million</item>
+        <item>5 million - 10 million</item>
+        <item>10 million and above</item>
+    </string-array>
+    <string-array name="Prices2">
+        <item>10,000 – 50,000</item>
+        <item>50,000 – 100,000</item>
+        <item>100,000 – 200,000</item>
+        <item>200,000 – 500,000</item>
+        <item>500,000 – 1 million</item>
+        <item>1 million – 5 million</item>
+        <item>5 million - 10 million</item>
+        <item>10 million and above</item>
+    </string-array>
+    <string-array name="SaleOptions">
+        <item>Houses</item>
+        <item>Land</item>
+    </string-array>
+</resources>
