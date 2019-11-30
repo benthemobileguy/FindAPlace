@@ -17,6 +17,8 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Build;
 import android.os.Bundle;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -1154,8 +1156,20 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.onUp
     private void setTextViewDrawableColor(TextView textView, int color) {
         for (Drawable drawable : textView.getCompoundDrawables()) {
             if (drawable != null) {
-                drawable.setColorFilter(new PorterDuffColorFilter(getColor(color), PorterDuff.Mode.SRC_IN));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    drawable.setColorFilter(new PorterDuffColorFilter(getColor(color), PorterDuff.Mode.SRC_IN));
+                }
             }
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        if(firebaseUser==null){
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
         }
     }
 }

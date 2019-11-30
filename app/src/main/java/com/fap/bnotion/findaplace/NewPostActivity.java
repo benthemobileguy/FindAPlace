@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -66,6 +67,7 @@ public class NewPostActivity extends AppCompatActivity {
     private List<String> fileNameList;
     private RadioGroup toilets_options, baths_options;
     private ArrayList<String> image_urls;
+    private UploadTask mUploadTask;
     private ScrollView mScrollView;
     private AgentPost agentPost;
     private List<String> fileDoneList;
@@ -732,24 +734,41 @@ public class NewPostActivity extends AppCompatActivity {
                     mUploadHouse.setImageURI(mainImageURI);
                     String user_id = mAuth.getCurrentUser().getUid();
                     final StorageReference postPath = storageReference.child("Images").child(user_id).child(String.valueOf(System.currentTimeMillis())).child(fileName);
-
                     final int finalI = i;
-                    postPath.putFile(mainImageURI).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                            if (task.isSuccessful()){
-                                mNumberPhotos.setText("" + myNum++);
-                                downloadUri = task.getResult().getDownloadUrl().toString();
-                                image_urls.add(downloadUri);
-                                //   fileDoneList.remove(finalI);
-                                fileDoneList.add(finalI, "done");
-                                uploadListAdapter.notifyDataSetChanged();
-                            } else {
-                                String errorMessage = task.getException().getMessage();
-                                Toast.makeText(NewPostActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
-                            }
-                            mProgressBar.setVisibility(View.INVISIBLE);
+                    mUploadTask = postPath.putFile(mainImageURI);
+                    Task<Uri> urlTask = mUploadTask.continueWithTask(task -> {
+                        if(task.isSuccessful()) {
+                        }
 
+                        // Continue with the task to get the download URL
+                        return postPath.getDownloadUrl();
+                    }).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            final Uri[] downloadUri = {task.getResult()};
+                            Map<String, String> userMap = new HashMap<>();
+                            userMap.put(Constants.PASSPORT, downloadUri[0].toString());
+                            firebaseFirestore.collection(Constants.USER_KEY).document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(!task.isSuccessful()) {
+                                        String errorMessage = task.getException().getMessage();
+                                        Toast.makeText(NewPostActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
+
+                                    } else {
+                                        mNumberPhotos.setText("" + myNum++);
+                                        downloadUri[0] = Uri.parse(downloadUri[0].toString());
+                                        image_urls.add(String.valueOf(downloadUri));
+                                        //   fileDoneList.remove(finalI);
+                                        fileDoneList.add(finalI, "done");
+                                        uploadListAdapter.notifyDataSetChanged();
+
+                                    }
+                                    mProgressBar.setVisibility(View.INVISIBLE);
+                                }
+                            });
+                            Toast.makeText(this, "Upload Success", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                         }
                     });
                     mScrollView.post(new Runnable() {

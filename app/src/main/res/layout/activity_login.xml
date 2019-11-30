@@ -12,7 +12,7 @@
         android:layout_below="@+id/register_toolbar"
         android:id="@+id/image"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo_full"
+        android:src="@drawable/logo_new"
         android:layout_width="100dp"
         android:layout_height="100dp" />
     <RelativeLayout
@@ -78,6 +78,7 @@
             android:layout_margin="16dp"
             android:text="@string/login_to_account" />
         <RelativeLayout
+            android:visibility="invisible"
             android:id="@+id/skip_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

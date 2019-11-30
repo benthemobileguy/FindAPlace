@@ -13,6 +13,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
+
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -47,6 +49,7 @@ public class RegisterAgentTwoActivity extends AppCompatActivity {
     private FirebaseUser user;
     private Uri mainImageURI = null;
     private String passport = "null";
+    private UploadTask mUploadTask;
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -194,36 +197,41 @@ public class RegisterAgentTwoActivity extends AppCompatActivity {
                 mProgressBarUpload.setVisibility(View.VISIBLE);
                 final String user_id = firebaseAuth.getCurrentUser().getUid();
                 StorageReference image_path = storageReference.child(Constants.PASSPORT).child(user_id + ".jpg");
-                image_path.putFile(mainImageURI).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if(task.isSuccessful()){
-                            final Uri download_uri = task.getResult().getDownloadUrl();
-                            Map<String, String> userMap = new HashMap<>();
-                            userMap.put(Constants.PASSPORT, download_uri.toString());
-                            firebaseFirestore.collection(Constants.USER_KEY).document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(!task.isSuccessful()) {
-                                        String  error = task.getException().getMessage();
-                                        Toast.makeText(RegisterAgentTwoActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
+                mUploadTask = image_path.putFile(mainImageURI);
+                Task<Uri> urlTask = mUploadTask.continueWithTask(task -> {
+                    if(task.isSuccessful()) {
+                    }
 
-                                    } else {
-                                        Toast.makeText(RegisterAgentTwoActivity.this, "uploaded successfully!", Toast.LENGTH_SHORT).show();
-                                        passport = download_uri.toString();
-                                        mContinueButton.setEnabled(true);
-                                    }
-                                mProgressBarUpload.setVisibility(View.INVISIBLE);
+                    // Continue with the task to get the download URL
+                    return image_path.getDownloadUrl();
+                }).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        Map<String, String> userMap = new HashMap<>();
+                        userMap.put(Constants.PASSPORT, downloadUri.toString());
+                        firebaseFirestore.collection(Constants.USER_KEY).document(user_id).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(!task.isSuccessful()) {
+                                    String  error = task.getException().getMessage();
+                                    Toast.makeText(RegisterAgentTwoActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    Toast.makeText(RegisterAgentTwoActivity.this, "Uploaded successfully!", Toast.LENGTH_SHORT).show();
+                                    passport = downloadUri.toString();
+                                    mContinueButton.setEnabled(true);
                                 }
-                            });
-                        } else {
-                            String error = task.getException().getMessage();
-                            Toast.makeText(RegisterAgentTwoActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
-                        }
+                                mProgressBarUpload.setVisibility(View.INVISIBLE);
+                            }
+                        });
+                        Toast.makeText(RegisterAgentTwoActivity.this, "Upload Success", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(RegisterAgentTwoActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 String error = result.getError().toString();
+                Log.d("Error", error);
                 Toast.makeText(RegisterAgentTwoActivity.this, "Error : " + error, Toast.LENGTH_LONG).show();
             }
         }

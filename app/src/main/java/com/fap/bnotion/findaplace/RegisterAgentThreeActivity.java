@@ -53,6 +53,7 @@ public class RegisterAgentThreeActivity extends AppCompatActivity {
     private StorageReference storageReference;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseUser user;
+    private UploadTask mUploadTask;
     private Uri mainImageURI = null;
     private FirebaseAuth mAuth;
     private String document = "document";
@@ -97,6 +98,7 @@ public class RegisterAgentThreeActivity extends AppCompatActivity {
         mDocumentUploadImage = findViewById(R.id.document_image);
         mProgressBarUpload = findViewById(R.id.progressBar);
         mFinishButton = findViewById(R.id.continue_button);
+        mFinishButton.setAlpha(0.5f);
         mFinishButton.setEnabled(false);
         Bundle extras = getIntent().getExtras();
         if(extras !=null){
@@ -247,37 +249,40 @@ public class RegisterAgentThreeActivity extends AppCompatActivity {
                 mProgressBarUpload.setVisibility(View.VISIBLE);
                 final String user_id = mAuth.getCurrentUser().getUid();
                 StorageReference image_path = storageReference.child(Constants.DOCUMENT_KEY).child(user_id + ".jpg");
-                image_path.putFile(mainImageURI).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if(task.isSuccessful()){
-                            final Uri download_uri = task.getResult().getDownloadUrl();
-                            Map<String, String> userMap = new HashMap<>();
-                            userMap.put(document, download_uri.toString());
-                            userMap.put("name", name);
-                            userMap.put("email", email);
-                            userMap.put("mobile number", mobileNumber);
-                            userMap.put("address", address);
-                            userMap.put("sex", sex);
-                            firebaseFirestore.collection(Constants.USER_KEY).document(user_id).set(userMap, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(!task.isSuccessful()) {
-                                        String  error = task.getException().getMessage();
-                                        Toast.makeText(RegisterAgentThreeActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
+                mUploadTask = image_path.putFile(mainImageURI);
+                Task<Uri> urlTask = mUploadTask.continueWithTask(task -> {
+                    if(task.isSuccessful()) {
+                    }
 
-                                    } else {
-                                        Toast.makeText(RegisterAgentThreeActivity.this, "successfully uploaded", Toast.LENGTH_SHORT).show();
-                                        document_url = download_uri.toString();
-                                        mFinishButton.setEnabled(true);
-                                    }
-                                    mProgressBarUpload.setVisibility(View.INVISIBLE);
+                    // Continue with the task to get the download URL
+                    return image_path.getDownloadUrl();
+                }).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        final Uri download_uri = task.getResult();
+                        Map<String, String> userMap = new HashMap<>();
+                        userMap.put(document, download_uri.toString());
+                        userMap.put("name", name);
+                        userMap.put("email", email);
+                        userMap.put("mobile number", mobileNumber);
+                        userMap.put("address", address);
+                        userMap.put("sex", sex);
+                        firebaseFirestore.collection(Constants.USER_KEY).document(user_id).set(userMap, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(!task.isSuccessful()) {
+                                    String  error = task.getException().getMessage();
+                                    Toast.makeText(RegisterAgentThreeActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    mFinishButton.setAlpha(1.0f);
+                                    mFinishButton.setEnabled(true);
+                                    Toast.makeText(RegisterAgentThreeActivity.this, "Success", Toast.LENGTH_LONG).show();
                                 }
-                            });
-                        } else {
-                            String error = task.getException().getMessage();
-                            Toast.makeText(RegisterAgentThreeActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
-                        }
+                                mProgressBarUpload.setVisibility(View.INVISIBLE);
+                            }
+                        });
+                    } else {
+                        Toast.makeText(this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
